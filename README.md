@@ -1,11 +1,18 @@
-# stats220
+# Stats 220
+### Project 1
 
-This is my repo for STATS 220. 
 
-A little about me:
+**My favourite lyrics**
+1. *I put my hand on a stove to see if I still bleed.*
+2. *I somehow see what's beautiful, in things that are ephemeral.*
+3. *Look up and you'll see me and I'll be around.*
 
-- I am undertaking a degree in ....
-- I am taking STATS 220 because ....
-- I am interested in learning about ....
+- Here's a bunch of unordered list.
+- Here's a bunch of unordered list.
+- Here's a bunch of unordered list.
 
-A meme that captures how I currently feel about my university studies is ![]([https://c.tenor.com/8druEACXtX8AAAAd/tenor.gif](https://giphy.com/gifs/scream-screaming-kenjikungifs-PnmMpkydgE20mAhWXV))
+[My favourite game](https://hsr.hoyoverse.com/en-us/)
+
+## How I feel about managing social, work and university life 
+
+![](https://media1.tenor.com/m/I2vnv_Rv5LoAAAAC/lizard-lizard-lizard.gif)
