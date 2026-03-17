@@ -12,6 +12,7 @@
 - Here's a bunch of unordered list.
 
 [My favourite game](https://hsr.hoyoverse.com/en-us/)
+
 [My favourite game genre](https://en.wikipedia.org/wiki/Roguelike)
 ## How I feel about managing social, work and university life 
 
