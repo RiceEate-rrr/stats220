@@ -1,0 +1,72 @@
+---
+title: My dynamic report
+output: html_fragment
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
+
+library(tidyverse)
+
+latest_data <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vTKo9Ve17d9WYV0hQUHsGQW4zOeGfZa1Ob37Mwtia5hApBxvS4k7PvnX2SWvH2NR0nrV4VCx6kFBhJ-/pub?output=csv") %>%
+  rename(
+    video_type = `What type of videos do you watch?`,
+    duration = `How long do these videos typically last? (Minutes wise)`,
+    time_of_day = `What time of day do you usually watch your videos?`,
+    location = `Where do you usually watch videos?`
+  )
+```
+
+```{css}
+body {
+  font-family: Arial, sans-serif;
+  color: #333333;
+  line-height: 1.6;
+}
+
+h2 {
+  color: #2c3e50;
+  border-bottom: 2px solid #dddddd;
+  padding-bottom: 5px;
+}
+
+p {
+  font-size: 16px;
+}
+```
+
+## Video Watching Habits
+
+This report shows the watching habits of participants, such as summary values which tells us the average duration of the videos they watched and the maximum video duration recorded. This report also shows 2 bar graphs which includes the types of videos people watch and when in the time of day these videos are watched.
+
+The average video duration is **`r round(mean(latest_data$duration, na.rm = TRUE), 1)` minutes**.
+
+The maximum video duration recorded is **`r max(latest_data$duration, na.rm = TRUE)` minutes**.
+
+## Types of Videos Watched
+
+```{r}
+latest_data %>%
+  ggplot() +
+  geom_bar(aes(x = video_type), fill = "#aecdd2") +
+  labs(
+    title = "Types of Videos Watched",
+    x = "Video Type",
+    y = "Number of Participants"
+  ) +
+  theme_minimal()
+```
+
+## Time of Day Videos Are Watched
+
+```{r}
+latest_data %>%
+  ggplot() +
+  geom_bar(aes(x = time_of_day), fill = "#c7dca7") +
+  labs(
+    title = "Time of Day Videos Are Watched",
+    x = "Time of Day",
+    y = "Number of Participants"
+  ) +
+  theme_minimal()
+```
