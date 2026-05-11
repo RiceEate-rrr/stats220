@@ -1,0 +1,96 @@
+---
+title: What people's YouTube viewing behaviours really are (Not clickbait!)
+output: html_document
+---
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
+```
+
+```{js}
+$(function() {
+  $(".level2").css('visibility', 'hidden');
+  $(".level2").first().css('visibility', 'visible');
+  $(".container-fluid").height($(".container-fluid").height() + 300);
+  $(window).on('scroll', function() {
+    $('h2').each(function() {
+      var h2Top = $(this).offset().top - $(window).scrollTop();
+      var windowHeight = $(window).height();
+      if (h2Top >= 0 && h2Top <= windowHeight / 2) {
+        $(this).parent('div').css('visibility', 'visible');
+      } else if (h2Top > windowHeight / 2) {
+        $(this).parent('div').css('visibility', 'hidden');
+      }
+    });
+  });
+})
+```
+
+```{css, echo=FALSE}
+body {
+  background-color: #f0faf4;
+  font-family: 'Georgia', serif;
+  color: #1a3d2b;
+}
+
+h1.title {
+  font-size: 2.4em;
+  color: #006d2c;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 20px;
+}
+
+h2 {
+  color: #006d2c;
+  font-weight: bold;
+  border-bottom: 3px solid #2ca25f;
+  padding-bottom: 6px;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.8;
+  font-family: 'Georgia', serif;
+  color: #1a3d2b;
+  font-weight: bold;
+}
+
+img {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 109, 44, 0.2);
+  margin: 20px auto;
+  display: block;
+  max-width: 100%;
+}
+
+.figcaption {display: none}
+```
+
+## What are people typically watching?
+
+This visual data story will explore the YouTube viewing behaviours that my respondents took, showing us what type of genre they commonly watched, how long these videos last depending on their genre, when they took my survey and where my respondents watched their videos. From the 26 participants, we can see some pretty interesting data which could benefit content creators who might be struggling in what content they want to expand on.  
+
+
+## Most commonly watched genre
+
+![Bar Chart that tells us the amount of people per video type watched](plot1.png)
+Looking at our graph here, we can see that the majority of people who took my survey watches a lot of entertainment videos, being closely followed by gaming. Entertainment is a pretty broad category, ranging from comedy all the way to drama, hence it makes sense that a lot of people chose entertainment for the type of videos they watch.
+
+
+## The length of videos
+
+![Box-plot showing the watch-time based on genre](plot2.png)
+We can see with our box-plot that the watch time for genres are vastly different from one another. Music shows to be the lowest in terms of duration by genre because music videos/song do not take a very long time to watch. Other is very high in terms of duration of videos because like stated previously, they range from comedy shows, to drama shows which are long in duration of time.
+
+## When did people do this survey?
+
+![Line/Point plot showing the number of respondents on a specific day](plot3.png)
+We can see a massive spike of people taking this survey was around the 27th of March, this was when I was actively asking people to participate in my survey, and coming out of my comfort zone to talk to people and interact with them, after gathering a majority of my participants, I asked a few of my friends to take it to give me a solid amount of data to work with, with me testing out my data again for the last time on the 1st of April. 
+
+## Where people usually watch their videos
+![Stacked Bar showing the location which respondents watch their video.](plot4.png)
+This graph finally shows the time where people tend to watch their videos, we can see that the majority of people who are at home watches their videos at late-night, indicating that people use videos to wind down and relax before going to sleep. While on the other hand, we can see that people who watch videos in the morning tend to watch their videos in School/University or in public transport, indicating that students are procastinating on doing their assignments and watching YouTube videos, or watching something when they are bored in public transport. 
+
